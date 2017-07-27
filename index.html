@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html  ng-app="myFirstApp">
   <head>
     <meta charset="utf-8">
-    <title>Hello World</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>My First App</title>
   </head>
   <body>
-    <h1>Hey You</h1>
+    <div ng-controller="MyFirstController">
+      <input type="text" name="" ng-model="box">
+      <p>{{name}}</p>
+      <p>{{sayHello()}}</p>
+      <p>{{nameUpper}}</p>
+      <p>{{'sto' | uppercase}}</p>
+      <p>Cost: {{ cookie | currency : '%' : 0 }}</p>
+      <p>Loves: {{sayLoveMessage()}}</p>
+      <p>Loves filter into html: {{"Monkey likes bananas!" | loves}}</p>
+      <p>Truth: {{sayLoveMessage() | truth : 'healthy' : 'no so healthy'}}</p>
+      <p>BIG TRUTH: {{sayLoveMessage() | truth : 'healthy' : 'no so healthy' | uppercase}}</p>
+      <p> {{box}}
+    </div>
 
   </body>
 </html>
